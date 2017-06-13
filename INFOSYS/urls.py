@@ -20,5 +20,5 @@ from Module_A import urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^user',include(urls)),
+    url(r'^user/',include(urls)),
 ]

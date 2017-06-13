@@ -55,7 +55,7 @@ ROOT_URLCONF = 'INFOSYS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '/INFOSYS/Module_A/templates')],
+        'DIRS': [os.path.join(BASE_DIR, '/Module_A/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

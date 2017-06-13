@@ -2,12 +2,16 @@
 <body>
 Hello Django !!
 <br/>
+
 {% for obj in data %}
 
+<br/>
 {{obj.user_id}}<br/>
+<a href='{{ obj.get_absolute_url }}'>{{obj.name}}</a><br/>
 {{obj.email}}<br/>
 {{obj.city}}<br/>
 
 {% endfor %}
+
 </body>
 </html>
