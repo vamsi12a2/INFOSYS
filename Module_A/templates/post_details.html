@@ -1,11 +1,16 @@
-<html>
-<body>
+{% extends "base.html" %}
 
-{{obj.user_id}}<br/>
-{{obj.name}}<br/>
-{{obj.email}}<br/>
-{{obj.city}}<br/>
+{% block title %}
+  User Details
+{% endblock title %}
 
-<!--{{instan}}-->
-</body>
-</html>
+{% block content %}
+    <div class="row">
+        <div class="col-md-4 offset-md-6">
+            {{obj.user_id}}<br/>
+            {{obj.name}}<br/>
+            {{obj.email}}<br/>
+            {{obj.city}}<br/>
+        </div>
+    </div>
+{% endblock content %}

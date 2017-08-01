@@ -1,16 +1,30 @@
-<html>
-<body>
-{% if messages %}
-<ul>
-    {% for msg in messages%}
-    <li>{{msg}}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-<form method="POST" action="">
-{{ form.as_p}}
-{% csrf_token %}
-<input type="submit" value="create"/>
-</form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+   New User
+{% endblock title %}
+
+{% block content %}
+    {% if messages %}
+    <ul>
+        {% for msg in messages%}
+        <li>{{msg}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="row form">
+        <center><h4><b>User Details</b></h4></center>
+        <table class="table table-bordered">
+        <form method="POST" action="">
+        {% csrf_token %}
+        {% for field in form %}
+            <tr>
+                <td><label for="{{field.id_for_label}}">{{field.label}}</label></td>
+                <td>{{field}}</td>
+            </tr>
+        {% endfor %}
+        <tr><td></td><td><input type="submit"  class="btn btn-primary create-btn"  value="create"/></td></tr>
+        </form>
+        </table>
+    </div>
+{% endblock content %}

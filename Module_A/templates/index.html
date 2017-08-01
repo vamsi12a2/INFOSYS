@@ -1,17 +1,18 @@
-<html>
-<body>
-Hello Django !!
-<br/>
+{% extends "base.html" %}
 
-{% for obj in data %}
+{% block title %}
+    Hello Django !!
+{% endblock title %}
 
-<br/>
-{{obj.user_id}}<br/>
-<a href='{{ obj.get_absolute_url }}'>{{obj.name}}</a><br/>
-{{obj.email}}<br/>
-{{obj.city}}<br/>
-
-{% endfor %}
-
-</body>
-</html>
+{% block content %}
+    <div class="row">
+    {% for obj in data %}
+        <div class=" col-sm-6 col-md-4">
+            <br/>{{obj.user_id}}<br/>
+            <a href='{{ obj.get_absolute_url }}'>{{obj.name}}</a><br/>
+            {{obj.email}}<br/>
+            {{obj.city}}<br/>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock content %}

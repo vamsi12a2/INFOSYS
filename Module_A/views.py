@@ -34,7 +34,7 @@ def user_form(request):
             instance.save()
             #print "hey"
             return HttpResponseRedirect(instance.get_absolute_url())
-        messages.error(request,"Name alredy exists")
+        #messages.error(request,"Name alredy exists")
         return render(request,"create_user.html",context)
 
     else:
